@@ -16,11 +16,9 @@
         <div class="box_lesson">
             <div class="box_week01_lesson01_quiz">
                 <div class="title_question_quiz">
-                    <h3>Nghe, lựa chọn tiếng có âm <span style="color: red;">a</span> <img class="play-audio" data-audio="../../../audio/read/1.mp3" src="../../../images/weeks/volume.png" alt=""></h3>
-					<audio id="audio" autoplay="" src=""></audio>
-                    <audio id="audio">
-                        <source src="../../../audio/read/1.mp3" type="audio/mpeg">
-                    </audio>
+                    <h3>Nghe, lựa chọn tiếng có âm <span style="color: red;">a</span> 
+                        <img class="play-audio" data-audio="../../../audio/read/1.mp3" src="../../../images/weeks/volume.png" alt="">
+                    </h3>
                 </div>
 
                 <div class="box_question_option">
@@ -68,43 +66,52 @@
             </div>
         </div>
     </div>
+
     <button type="button" class="btn btn-info btn-lg btn_modal" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
     <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"></h4>
-          </div>
-          <div class="modal-body">
-            <p class="notify"></p>
-            <p class="icon_notify">
-                <img src="" class="icon_status" alt="">
-            </p>
-          </div>
-          <div class="modal-footer btn_reset_hide">
-            <button type="button" class="btn btn-warning btn_reset">Làm lại</button>
-          </div>
-          <div class="modal-footer btn_reset_hide_continue">
-            <button type="button" class="btn btn-success btn_continue" data-url="../../../weeks/week01/matching/lesson09.html">Tiếp tục</button>
-          </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p class="notify"></p>
+                    <p class="icon_notify">
+                        <img src="" class="icon_status" alt="">
+                    </p>
+                </div>
+                <div class="modal-footer btn_reset_hide">
+                    <button type="button" class="btn btn-warning btn_reset">Làm lại</button>
+                </div>
+                <div class="modal-footer btn_reset_hide_continue">
+                    <button type="button" class="btn btn-success btn_continue" data-url="../../../weeks/week01/matching/lesson09.html">Tiếp tục</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+
+    <audio id="global-audio"></audio>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let audio = document.getElementById("audio");
+            let globalAudio = document.getElementById("global-audio");
+
             document.querySelectorAll(".play-audio").forEach(function(img) {
                 img.addEventListener("click", function(event) {
                     event.stopPropagation(); 
                     let audioSrc = this.getAttribute("data-audio");
-                    if (audioSrc) {
-                        if (audio.src !== audioSrc) {
-                            audio.src = audioSrc;
+
+                    if (globalAudio.src !== audioSrc) {
+                        globalAudio.src = audioSrc;
+                        globalAudio.play();
+                    } else {
+                        if (globalAudio.paused) {
+                            globalAudio.play();
+                        } else {
+                            globalAudio.pause();
                         }
-                        audio.play();
                     }
                 });
             });
