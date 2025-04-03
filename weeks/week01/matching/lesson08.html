@@ -12,8 +12,13 @@
         <div class="box_lesson">
             <div class="box_week01_lesson01_quiz">
                 <div class="title_question_quiz">
+<<<<<<< HEAD
                     <h3>Nghe, lựa chọn tiếng có âm <span style="color: red;">a</span>
                         <button class="play-audio" data-audio="../../../audio/read/1.mp3">🔊</button>
+=======
+                    <h3>Nghe, lựa chọn tiếng có âm <span style="color: red;">a</span> 
+                        <img class="play-audio" data-audio="../../../audio/read/1.mp3" src="../../../images/weeks/volume.png" alt="">
+>>>>>>> c6a63a9 (Lưu thay đổi trước khi pull)
                     </h3>
                 </div>
                 <div class="box_question_option">
@@ -52,21 +57,69 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+
+    <audio id="global-audio"></audio>
+=======
+
+    <button type="button" class="btn btn-info btn-lg btn_modal" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p class="notify"></p>
+                    <p class="icon_notify">
+                        <img src="" class="icon_status" alt="">
+                    </p>
+                </div>
+                <div class="modal-footer btn_reset_hide">
+                    <button type="button" class="btn btn-warning btn_reset">Làm lại</button>
+                </div>
+                <div class="modal-footer btn_reset_hide_continue">
+                    <button type="button" class="btn btn-success btn_continue" data-url="../../../weeks/week01/matching/lesson09.html">Tiếp tục</button>
+                </div>
+            </div>
+        </div>
+    </div>
+>>>>>>> c6a63a9 (Lưu thay đổi trước khi pull)
 
     <audio id="global-audio"></audio>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+<<<<<<< HEAD
             const globalAudio = document.getElementById("global-audio");
 
             document.querySelectorAll(".play-audio").forEach(button => {
                 button.addEventListener("click", function() {
                     const audioSrc = this.getAttribute("data-audio");
+=======
+            let globalAudio = document.getElementById("global-audio");
+
+            document.querySelectorAll(".play-audio").forEach(function(img) {
+                img.addEventListener("click", function(event) {
+                    event.stopPropagation(); 
+                    let audioSrc = this.getAttribute("data-audio");
+
+>>>>>>> c6a63a9 (Lưu thay đổi trước khi pull)
                     if (globalAudio.src !== audioSrc) {
                         globalAudio.src = audioSrc;
                         globalAudio.play();
                     } else {
+<<<<<<< HEAD
                         globalAudio.paused ? globalAudio.play() : globalAudio.pause();
+=======
+                        if (globalAudio.paused) {
+                            globalAudio.play();
+                        } else {
+                            globalAudio.pause();
+                        }
+>>>>>>> c6a63a9 (Lưu thay đổi trước khi pull)
                     }
                 });
             });
@@ -74,3 +127,128 @@
     </script>
 </body>
 </html>
+<<<<<<< HEAD
+=======
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần mềm hướng dẫn học sinh</title>
+
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/style.css" rel="stylesheet">
+    
+    <script src="../../../js/19x/jquery.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="box_lesson">
+            <div class="box_week01_lesson01_quiz">
+                <div class="title_question_quiz">
+                    <h3>Nghe, lựa chọn tiếng có âm <span style="color: red;">a</span> 
+                        <img class="play-audio" data-audio="../../../audio/read/1.mp3" src="../../../images/weeks/volume.png" alt="">
+                    </h3>
+                </div>
+
+                <div class="box_question_option">
+                    <div class="row_box_opt">
+                        <div class="box_question_answer">
+                            <img src="../../../images/lesson/question01/quiz/4.png" class="img-responsive" alt="">
+                            <p class="checked_answer">
+                                <input type="checkbox" name="opt" value="true">
+                                <img class="play-audio" data-audio="../../../audio/read/2.mp3" src="../../../images/weeks/volume.png" alt="">
+                            </p>
+                        </div>
+                        <div class="box_question_answer">
+                            <img src="../../../images/lesson/question01/quiz/7.png" class="img-responsive" alt="">
+                            <p class="checked_answer">
+                                <input type="checkbox" name="opt" value="false">
+                                <img class="play-audio" data-audio="../../../audio/read/3.mp3" src="../../../images/weeks/volume.png" alt="">
+                            </p>
+                        </div>
+                    </div>  
+                    <div class="row_box_opt">
+                        <div class="box_question_answer"> 
+                            <img src="../../../images/lesson/question01/quiz/5.png" class="img-responsive" alt="">
+                            <p class="checked_answer">
+                                <input type="checkbox" name="opt" value="true">
+                                <img class="play-audio" data-audio="../../../audio/read/4.mp3" src="../../../images/weeks/volume.png" alt="">
+                            </p>
+                        </div>
+                        <div class="box_question_answer">
+                            <img src="../../../images/lesson/question01/quiz/6.png" class="img-responsive" alt="">
+                            <p class="checked_answer">
+                                <input type="checkbox" name="opt" value="false">
+                                <img class="play-audio" data-audio="../../../audio/read/5.mp3" src="../../../images/weeks/volume.png" alt="">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-center btn_submit">
+                                <button type="button" class="btn btn-success btn_submit_quiz">Nộp bài</button>
+                            </p>
+                        </div>
+                    </div>              
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-info btn-lg btn_modal" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p class="notify"></p>
+                    <p class="icon_notify">
+                        <img src="" class="icon_status" alt="">
+                    </p>
+                </div>
+                <div class="modal-footer btn_reset_hide">
+                    <button type="button" class="btn btn-warning btn_reset">Làm lại</button>
+                </div>
+                <div class="modal-footer btn_reset_hide_continue">
+                    <button type="button" class="btn btn-success btn_continue" data-url="../../../weeks/week01/matching/lesson09.html">Tiếp tục</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="global-audio"></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let globalAudio = document.getElementById("global-audio");
+
+            document.querySelectorAll(".play-audio").forEach(function(img) {
+                img.addEventListener("click", function(event) {
+                    event.stopPropagation(); 
+                    let audioSrc = this.getAttribute("data-audio");
+
+                    if (globalAudio.src !== audioSrc) {
+                        globalAudio.src = audioSrc;
+                        globalAudio.play();
+                    } else {
+                        if (globalAudio.paused) {
+                            globalAudio.play();
+                        } else {
+                            globalAudio.pause();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript" src="../../../js/custom3.js"></script>
+</body>
+</html>
+>>>>>>> c6a63a9 (Lưu thay đổi trước khi pull)
