@@ -17,8 +17,10 @@
 		<div class="box_lesson">
 		<div class="box_week01_lesson01_quiz">
 			<div class="title_question_quiz">
-				<h3>Chọn tranh phù hợp với nội dung câu dưới đây.<img src="../../../images/weeks/volume.png" alt=""></h3>
-				<audio id="audio" autoplay="" src=""></audio>
+				<h3>Chọn tranh phù hợp với nội dung câu dưới đây.<img class="play-audio" data-audio="../../../audio/read/21.mp3" src="../../../images/weeks/volume.png" alt="">
+					<audio id="audio">
+						<source src="../../../audio/read/21.mp3" type="audio/mpeg">
+					</audio>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -99,7 +101,23 @@
 	</div>
 	<audio id="audio" autoplay="" src=""></audio>
   </div>
-
+  <script>
+	document.addEventListener("DOMContentLoaded", function() {
+		let audio = document.getElementById("audio");
+		document.querySelectorAll(".play-audio").forEach(function(img) {
+			img.addEventListener("click", function(event) {
+				event.stopPropagation(); 
+				let audioSrc = this.getAttribute("data-audio");
+				if (audioSrc) {
+					if (audio.src !== audioSrc) {
+						audio.src = audioSrc;
+					}
+					audio.play();
+				}
+			});
+		});
+	});
+</script>
 	<script type="text/javascript" src="../../../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../../../js/jquery-ui.min.js"></script>
 	<!-- <script src="/js/2x/jquery.min.js"></script>
